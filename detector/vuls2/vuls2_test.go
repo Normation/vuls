@@ -1394,14 +1394,16 @@ func Test_postConvert(t *testing.T) {
 					Confidences: models.Confidences{models.OvalMatch},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "package1",
-							NotFixedYet: false,
-							FixedIn:     "0.0.0-1.el9",
+							Name:         "package1",
+							NotFixedYet:  false,
+							FixedIn:      "0.0.0-1.el9",
+							VersionFound: "0.0.0",
 						},
 						{
-							Name:        "package2",
-							NotFixedYet: false,
-							FixedIn:     "0.0.0-1.el9",
+							Name:         "package2",
+							NotFixedYet:  false,
+							FixedIn:      "0.0.0-1.el9",
+							VersionFound: "0.0.0",
 						},
 					},
 					DistroAdvisories: models.DistroAdvisories{
@@ -1450,19 +1452,22 @@ func Test_postConvert(t *testing.T) {
 					Confidences: models.Confidences{models.OvalMatch},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "package1",
-							NotFixedYet: false,
-							FixedIn:     "0.0.0-1.el9",
+							Name:         "package1",
+							NotFixedYet:  false,
+							FixedIn:      "0.0.0-1.el9",
+							VersionFound: "0.0.0",
 						},
 						{
-							Name:        "package2",
-							NotFixedYet: false,
-							FixedIn:     "0.0.1-0.el9",
+							Name:         "package2",
+							NotFixedYet:  false,
+							FixedIn:      "0.0.1-0.el9",
+							VersionFound: "0.0.0",
 						},
 						{
-							Name:        "package3",
-							NotFixedYet: false,
-							FixedIn:     "0.0.1-0.el9",
+							Name:         "package3",
+							NotFixedYet:  false,
+							FixedIn:      "0.0.1-0.el9",
+							VersionFound: "0.0.0",
 						},
 					},
 					DistroAdvisories: models.DistroAdvisories{
@@ -1530,19 +1535,22 @@ func Test_postConvert(t *testing.T) {
 					},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "package1",
-							NotFixedYet: false,
-							FixedIn:     "0.0.0-1.el9",
+							Name:         "package1",
+							NotFixedYet:  false,
+							FixedIn:      "0.0.0-1.el9",
+							VersionFound: "0.0.0",
 						},
 						{
-							Name:        "package2",
-							NotFixedYet: false,
-							FixedIn:     "0.0.1-0.el9",
+							Name:         "package2",
+							NotFixedYet:  false,
+							FixedIn:      "0.0.1-0.el9",
+							VersionFound: "0.0.0",
 						},
 						{
-							Name:        "package3",
-							NotFixedYet: true,
-							FixState:    "Affected",
+							Name:         "package3",
+							NotFixedYet:  true,
+							FixState:     "Affected",
+							VersionFound: "0.0.0",
 						},
 					},
 					CveContents: models.CveContents{
@@ -2355,9 +2363,10 @@ func Test_postConvert(t *testing.T) {
 					Confidences: models.Confidences{models.OvalMatch},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "package1",
-							NotFixedYet: false,
-							FixedIn:     "0.0.1-0.el9",
+							Name:         "package1",
+							NotFixedYet:  false,
+							FixedIn:      "0.0.1-0.el9",
+							VersionFound: "0.0.0",
 						},
 					},
 					DistroAdvisories: models.DistroAdvisories{
@@ -2406,14 +2415,16 @@ func Test_postConvert(t *testing.T) {
 					Confidences: models.Confidences{models.OvalMatch},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "package1",
-							NotFixedYet: false,
-							FixedIn:     "0.0.0-2.el9",
+							Name:         "package1",
+							NotFixedYet:  false,
+							FixedIn:      "0.0.0-2.el9",
+							VersionFound: "0.0.0",
 						},
 						{
-							Name:        "package2",
-							NotFixedYet: false,
-							FixedIn:     "0.0.1-0.el9",
+							Name:         "package2",
+							NotFixedYet:  false,
+							FixedIn:      "0.0.1-0.el9",
+							VersionFound: "0.0.0",
 						},
 					},
 					DistroAdvisories: models.DistroAdvisories{
@@ -2835,9 +2846,10 @@ func Test_postConvert(t *testing.T) {
 					Confidences: models.Confidences{models.OvalMatch},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "package1",
-							NotFixedYet: false,
-							FixedIn:     "0.0.1-0.el9",
+							Name:         "package1",
+							NotFixedYet:  false,
+							FixedIn:      "0.0.1-0.el9",
+							VersionFound: "0.0.0",
 						},
 					},
 					CveContents: models.CveContents{
@@ -2872,9 +2884,10 @@ func Test_postConvert(t *testing.T) {
 					Confidences: models.Confidences{models.OvalMatch},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "package1",
-							NotFixedYet: false,
-							FixedIn:     "0.0.0-1.el9",
+							Name:         "package1",
+							NotFixedYet:  false,
+							FixedIn:      "0.0.0-1.el9",
+							VersionFound: "0.0.0",
 						},
 					},
 					DistroAdvisories: models.DistroAdvisories{
@@ -3386,14 +3399,16 @@ func Test_postConvert(t *testing.T) {
 					}},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "package1",
-							NotFixedYet: true,
-							FixState:    "Affected",
+							Name:         "package1",
+							NotFixedYet:  true,
+							FixState:     "Affected",
+							VersionFound: "0.0.0",
 						},
 						{
-							Name:        "package2",
-							NotFixedYet: false,
-							FixedIn:     "0.0.0-1.el9",
+							Name:         "package2",
+							NotFixedYet:  false,
+							FixedIn:      "0.0.0-1.el9",
+							VersionFound: "0.0.0",
 						},
 					},
 					DistroAdvisories: models.DistroAdvisories{
@@ -3494,9 +3509,10 @@ func Test_postConvert(t *testing.T) {
 					}},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "package2",
-							NotFixedYet: false,
-							FixedIn:     "0.0.0-1.el9",
+							Name:         "package2",
+							NotFixedYet:  false,
+							FixedIn:      "0.0.0-1.el9",
+							VersionFound: "0.0.0",
 						},
 					},
 					DistroAdvisories: models.DistroAdvisories{
@@ -4351,9 +4367,10 @@ func Test_postConvert(t *testing.T) {
 					Confidences: models.Confidences{models.OvalMatch},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "package1",
-							NotFixedYet: false,
-							FixedIn:     "0.0.0-0.el9_1",
+							Name:         "package1",
+							NotFixedYet:  false,
+							FixedIn:      "0.0.0-0.el9_1",
+							VersionFound: "0.0.0",
 						},
 					},
 					DistroAdvisories: models.DistroAdvisories{
@@ -4398,9 +4415,10 @@ func Test_postConvert(t *testing.T) {
 					Confidences: models.Confidences{models.OvalMatch},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "package1",
-							NotFixedYet: false,
-							FixedIn:     "0.0.0-1.el9",
+							Name:         "package1",
+							NotFixedYet:  false,
+							FixedIn:      "0.0.0-1.el9",
+							VersionFound: "0.0.0",
 						},
 					},
 					DistroAdvisories: models.DistroAdvisories{
@@ -4445,9 +4463,10 @@ func Test_postConvert(t *testing.T) {
 					Confidences: models.Confidences{models.OvalMatch},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "package1",
-							NotFixedYet: false,
-							FixedIn:     "0.0.0-1.el9",
+							Name:         "package1",
+							NotFixedYet:  false,
+							FixedIn:      "0.0.0-1.el9",
+							VersionFound: "0.0.0",
 						},
 					},
 					DistroAdvisories: models.DistroAdvisories{
@@ -4773,9 +4792,10 @@ func Test_postConvert(t *testing.T) {
 					Confidences: models.Confidences{models.OvalMatch},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "package1",
-							NotFixedYet: false,
-							FixedIn:     "0.0.0-1.el9",
+							Name:         "package1",
+							NotFixedYet:  false,
+							FixedIn:      "0.0.0-1.el9",
+							VersionFound: "0.0.0",
 						},
 					},
 					DistroAdvisories: models.DistroAdvisories{
@@ -5022,9 +5042,10 @@ func Test_postConvert(t *testing.T) {
 					Confidences: models.Confidences{models.OvalMatch},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "package1",
-							NotFixedYet: false,
-							FixedIn:     "0.0.0-1.el9",
+							Name:         "package1",
+							NotFixedYet:  false,
+							FixedIn:      "0.0.0-1.el9",
+							VersionFound: "0.0.0",
 						},
 					},
 					DistroAdvisories: models.DistroAdvisories{
@@ -5898,19 +5919,22 @@ func Test_postConvert(t *testing.T) {
 					Confidences: models.Confidences{models.UbuntuAPIMatch},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "linux-headers-5.15.0-69",
-							NotFixedYet: false,
-							FixedIn:     "5.15.0-70.77",
+							Name:         "linux-headers-5.15.0-69",
+							NotFixedYet:  false,
+							FixedIn:      "5.15.0-70.77",
+							VersionFound: "5.15.0-69.76",
 						},
 						{
-							Name:        "linux-headers-5.15.0-69-generic",
-							NotFixedYet: false,
-							FixedIn:     "5.15.0-70.77",
+							Name:         "linux-headers-5.15.0-69-generic",
+							NotFixedYet:  false,
+							FixedIn:      "5.15.0-70.77",
+							VersionFound: "5.15.0-69.76",
 						},
 						{
-							Name:        "linux-image-5.15.0-69-generic",
-							NotFixedYet: false,
-							FixedIn:     "5.15.0-70.77",
+							Name:         "linux-image-5.15.0-69-generic",
+							NotFixedYet:  false,
+							FixedIn:      "5.15.0-70.77",
+							VersionFound: "5.15.0-69.76",
 						},
 					},
 					CveContents: models.CveContents{
@@ -5944,19 +5968,22 @@ func Test_postConvert(t *testing.T) {
 					Confidences: models.Confidences{models.UbuntuAPIMatch},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "linux-headers-5.15.0-69",
-							NotFixedYet: false,
-							FixedIn:     "5.15.0-70.77",
+							Name:         "linux-headers-5.15.0-69",
+							NotFixedYet:  false,
+							FixedIn:      "5.15.0-70.77",
+							VersionFound: "5.15.0-69.76",
 						},
 						{
-							Name:        "linux-headers-5.15.0-69-generic",
-							NotFixedYet: false,
-							FixedIn:     "5.15.0-70.77",
+							Name:         "linux-headers-5.15.0-69-generic",
+							NotFixedYet:  false,
+							FixedIn:      "5.15.0-70.77",
+							VersionFound: "5.15.0-69.76",
 						},
 						{
-							Name:        "linux-image-5.15.0-69-generic",
-							NotFixedYet: false,
-							FixedIn:     "5.15.0-70.77",
+							Name:         "linux-image-5.15.0-69-generic",
+							NotFixedYet:  false,
+							FixedIn:      "5.15.0-70.77",
+							VersionFound: "5.15.0-69.76",
 						},
 					},
 					CveContents: models.CveContents{
@@ -5990,9 +6017,10 @@ func Test_postConvert(t *testing.T) {
 					Confidences: models.Confidences{models.UbuntuAPIMatch},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "bash",
-							NotFixedYet: false,
-							FixedIn:     "5.1-6ubuntu2",
+							Name:         "bash",
+							NotFixedYet:  false,
+							FixedIn:      "5.1-6ubuntu2",
+							VersionFound: "5.1-6ubuntu1",
 						},
 					},
 					CveContents: models.CveContents{
@@ -6298,9 +6326,10 @@ func Test_postConvert(t *testing.T) {
 					Confidences: models.Confidences{models.UbuntuAPIMatch},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "bash",
-							NotFixedYet: false,
-							FixedIn:     "5.1-6ubuntu2",
+							Name:         "bash",
+							NotFixedYet:  false,
+							FixedIn:      "5.1-6ubuntu2",
+							VersionFound: "5.1-6ubuntu1",
 						},
 					},
 					CveContents: models.CveContents{
@@ -6574,14 +6603,16 @@ func Test_postConvert(t *testing.T) {
 					Confidences: models.Confidences{models.OvalMatch},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "kernel-tools",
-							NotFixedYet: false,
-							FixedIn:     "0:3.10.0-1160.80.1.0.1.el7",
+							Name:         "kernel-tools",
+							NotFixedYet:  false,
+							FixedIn:      "0:3.10.0-1160.80.1.0.1.el7",
+							VersionFound: "3.10.0",
 						},
 						{
-							Name:        "kernel-uek",
-							NotFixedYet: false,
-							FixedIn:     "0:5.4.17-2136.339.5.el7uek",
+							Name:         "kernel-uek",
+							NotFixedYet:  false,
+							FixedIn:      "0:5.4.17-2136.339.5.el7uek",
+							VersionFound: "5.4.17",
 						},
 					},
 					DistroAdvisories: models.DistroAdvisories{
@@ -6881,8 +6912,9 @@ func Test_postConvert(t *testing.T) {
 					Confidences: models.Confidences{models.OvalMatch},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "binutils",
-							NotFixedYet: true,
+							Name:         "binutils",
+							NotFixedYet:  true,
+							VersionFound: "2.37",
 						},
 					},
 					DistroAdvisories: models.DistroAdvisories{
@@ -7229,8 +7261,9 @@ func Test_postConvert(t *testing.T) {
 					Confidences: models.Confidences{models.OvalMatch},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "kernel-default",
-							NotFixedYet: false,
+							Name:         "kernel-default",
+							NotFixedYet:  false,
+							VersionFound: "5.3.17",
 						},
 					},
 					CveContents: models.CveContents{
@@ -7560,8 +7593,9 @@ func Test_postConvert(t *testing.T) {
 					Confidences: models.Confidences{models.OvalMatch},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "kernel-default",
-							NotFixedYet: false,
+							Name:         "kernel-default",
+							NotFixedYet:  false,
+							VersionFound: "5.3.18",
 						},
 					},
 					CveContents: models.CveContents{
@@ -7897,12 +7931,14 @@ func Test_postConvert(t *testing.T) {
 					Confidences: models.Confidences{models.OvalMatch},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "kernel-default",
-							NotFixedYet: false,
+							Name:         "kernel-default",
+							VersionFound: "5.3.18",
+							NotFixedYet:  false,
 						},
 						{
-							Name:        "kernel-livepatch-5_3_18-150300_59_43-default",
-							NotFixedYet: false,
+							Name:         "kernel-livepatch-5_3_18-150300_59_43-default",
+							VersionFound: "15",
+							NotFixedYet:  false,
 						},
 					},
 					CveContents: models.CveContents{
@@ -8334,9 +8370,10 @@ func Test_postConvert(t *testing.T) {
 					},
 					AffectedPackages: models.PackageFixStatuses{
 						{
-							Name:        "libxml2",
-							FixedIn:     "2.9.14+dfsg-1.3~deb12u4",
-							NotFixedYet: false,
+							Name:         "libxml2",
+							FixedIn:      "2.9.14+dfsg-1.3~deb12u4",
+							VersionFound: "2.9.14+dfsg-1.3~deb12u1",
+							NotFixedYet:  false,
 						},
 					},
 					DistroAdvisories: models.DistroAdvisories{

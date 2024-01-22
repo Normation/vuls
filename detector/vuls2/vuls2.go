@@ -592,8 +592,9 @@ func walkCriteria(e ecosystemTypes.Ecosystem, sourceID sourceTypes.SourceID, ca 
 							}
 							return fixState(e, sourceID, fcn.Criterion.Version.FixStatus.Vendor)
 						}(),
-						FixedIn:     fixedIn,
-						NotFixedYet: fcn.Criterion.Version.FixStatus == nil || fcn.Criterion.Version.FixStatus.Class != vcFixStatusTypes.ClassFixed,
+						VersionFound: scanned.OSPackages[index].Version,
+						FixedIn:      fixedIn,
+						NotFixedYet:  fcn.Criterion.Version.FixStatus == nil || fcn.Criterion.Version.FixStatus.Class != vcFixStatusTypes.ClassFixed,
 					},
 				})
 			}
