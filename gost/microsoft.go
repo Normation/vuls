@@ -76,6 +76,7 @@ func (ms Microsoft) DetectCVEs(r *models.ScanResult, _ bool) (nCVEs int, err err
 		unapplied = r.Unapplied
 	} else {
 		applied, unapplied, err = ms.driver.GetExpandKB(applied, unapplied)
+		unapplied = r.WindowsKB.Unapplied
 		if err != nil {
 			return 0, xerrors.Errorf("Failed to detect CVEs. err: %w", err)
 		}
@@ -215,7 +216,6 @@ func (ms Microsoft) detect(r *models.ScanResult, cve gostmodels.MicrosoftCVE, ap
 				}
 				continue
 			}
-
 			p.KBs = func() []gostmodels.MicrosoftKB {
 				var kbs []gostmodels.MicrosoftKB
 				for _, kb := range p.KBs {
@@ -336,6 +336,7 @@ func (ms Microsoft) detect(r *models.ScanResult, cve gostmodels.MicrosoftCVE, ap
 				}())
 				if !slices.Contains(vinfo.WindowsKBFixedIns, kbid) {
 					vinfo.WindowsKBFixedIns = append(vinfo.WindowsKBFixedIns, kbid)
+					vinfo.WindowsKBFound = append(vinfo.WindowsKBFixedIns, kbid)
 				}
 			}
 		}
