@@ -78,6 +78,7 @@ func (v VulnInfos) FilterUnfixed(ignoreUnfixed bool) (_ VulnInfos, nFiltered int
 		for _, p := range v.AffectedPackages {
 			NotFixedAll = NotFixedAll && p.NotFixedYet
 		}
+		NotFixedAll = NotFixedAll && (len(v.WindowsKBFixedIns) == 0)
 		if NotFixedAll {
 			nFiltered++
 		}
@@ -274,6 +275,7 @@ type VulnInfo struct {
 	WpPackageFixStats    WpPackageFixStats    `json:"wpPackageFixStats,omitempty"`
 	LibraryFixedIns      LibraryFixedIns      `json:"libraryFixedIns,omitempty"`
 	WindowsKBFixedIns    []string             `json:"windowsKBFixedIns,omitempty"`
+	WindowsKBFound       []string             `json:"WindowsKBFound,omitempty"`
 	VulnType             string               `json:"vulnType,omitempty"`
 	DiffStatus           DiffStatus           `json:"diffStatus,omitempty"`
 }
