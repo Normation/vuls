@@ -331,6 +331,12 @@ func (ms Microsoft) detect(r *models.ScanResult, cve gostmodels.MicrosoftCVE, ap
 					AdvisoryID:  kbid,
 					Description: "Microsoft Knowledge Base",
 				}))
+
+				vinfo.AffectedPackages = append(vinfo.AffectedPackages, models.PackageFixStatus{
+					Name:     "Windows",
+					FixState: "fixed",
+					FixedIn:  kbid,
+				})
 				if !slices.Contains(vinfo.WindowsKBFixedIns, kbid) {
 					vinfo.WindowsKBFixedIns = append(vinfo.WindowsKBFixedIns, kbid)
 					vinfo.WindowsKBFound = append(vinfo.WindowsKBFound, kb.Article)
