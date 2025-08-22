@@ -275,7 +275,7 @@ type VulnInfo struct {
 	WpPackageFixStats    WpPackageFixStats    `json:"wpPackageFixStats,omitempty"`
 	LibraryFixedIns      LibraryFixedIns      `json:"libraryFixedIns,omitempty"`
 	WindowsKBFixedIns    []string             `json:"windowsKBFixedIns,omitempty"`
-	WindowsKBFound       []string             `json:"WindowsKBFound,omitempty"`
+	WindowsKBFound       []string             `json:"windowsKBFound,omitempty"`
 	VulnType             string               `json:"vulnType,omitempty"`
 	DiffStatus           DiffStatus           `json:"diffStatus,omitempty"`
 }
