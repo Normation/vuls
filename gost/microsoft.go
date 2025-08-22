@@ -327,6 +327,12 @@ func (ms Microsoft) detect(r *models.ScanResult, cve gostmodels.MicrosoftCVE, ap
 				}
 			} else {
 				kbid := fmt.Sprintf("KB%s", kb.Article)
+
+				vinfo.AffectedPackages = append(vinfo.AffectedPackages, models.PackageFixStatus{
+					Name:     "Windows",
+					FixState: "fixed",
+					FixedIn:  kbid,
+				})
 				vinfo.DistroAdvisories.AppendIfMissing(func() *models.DistroAdvisory {
 					a := models.DistroAdvisory{
 						AdvisoryID:  kbid,
