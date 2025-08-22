@@ -336,7 +336,7 @@ func (ms Microsoft) detect(r *models.ScanResult, cve gostmodels.MicrosoftCVE, ap
 				}())
 				if !slices.Contains(vinfo.WindowsKBFixedIns, kbid) {
 					vinfo.WindowsKBFixedIns = append(vinfo.WindowsKBFixedIns, kbid)
-					vinfo.WindowsKBFound = append(vinfo.WindowsKBFound, kbid)
+					vinfo.WindowsKBFound = append(vinfo.WindowsKBFound, kb.Article)
 				}
 			}
 		}
