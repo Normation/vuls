@@ -102,6 +102,13 @@ func TestMicrosoft_detect(t *testing.T) {
 			want: &models.VulnInfo{
 				CveID:       "CVE-2023-21554",
 				Confidences: models.Confidences{models.WindowsUpdateSearch},
+				AffectedPackages: models.PackageFixStatuses{
+					{
+						Name:     "Windows",
+						FixState: "fixed",
+						FixedIn:  "KB5025221",
+					},
+				},
 				DistroAdvisories: models.DistroAdvisories{
 					{
 						AdvisoryID:  "KB5025221",
@@ -117,6 +124,7 @@ func TestMicrosoft_detect(t *testing.T) {
 					},
 				},
 				WindowsKBFixedIns: []string{"KB5025221"},
+				WindowsKBFound:    []string{"5025221"},
 			},
 		},
 		{
@@ -245,6 +253,18 @@ func TestMicrosoft_detect(t *testing.T) {
 			want: &models.VulnInfo{
 				CveID:       "CVE-2016-7195",
 				Confidences: models.Confidences{models.WindowsUpdateSearch},
+				AffectedPackages: models.PackageFixStatuses{
+					{
+						Name:     "Windows",
+						FixState: "fixed",
+						FixedIn:  "KB3200970",
+					},
+					{
+						Name:     "Windows",
+						FixState: "fixed",
+						FixedIn:  "KB3200970",
+					},
+				},
 				DistroAdvisories: models.DistroAdvisories{
 					{
 						AdvisoryID:  "KB3200970",
@@ -260,6 +280,7 @@ func TestMicrosoft_detect(t *testing.T) {
 					},
 				},
 				WindowsKBFixedIns: []string{"KB3200970"},
+				WindowsKBFound:    []string{"3200970"},
 			},
 		},
 		{
