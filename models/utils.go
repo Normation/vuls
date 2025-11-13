@@ -170,7 +170,9 @@ func ConvertNvdToModel(cveID string, nvds []cvedict.Nvd) ([]CveContent, []Exploi
 
 		desc := make([]string, 0, len(nvd.Descriptions))
 		for _, d := range nvd.Descriptions {
-			desc = append(desc, d.Value)
+			if d.Lang == "en" {
+				desc = append(desc, d.Value)
+			}
 		}
 
 		m := map[string]CveContent{}
